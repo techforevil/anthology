@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_180637) do
     t.string "isbn"
     t.string "author"
     t.string "google_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "created_by_id"
     t.string "openlibrary_id"
   end
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_180637) do
     t.integer "book_id"
     t.integer "book_reference", null: false
     t.boolean "on_loan", default: false, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "missing", default: false
     t.integer "shelf_id"
   end
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_180637) do
     t.integer "copy_id"
     t.string "state", default: "on_loan"
     t.datetime "loan_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.datetime "return_date"
     t.integer "returned_by_id"
     t.integer "returned_to_shelf_id"
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 2021_08_06_180637) do
 
   create_table "shelves", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
     t.string "provider"
     t.string "provider_uid"
